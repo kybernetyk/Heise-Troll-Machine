@@ -1,0 +1,97 @@
+####### PHASE 1
+
+POST action="/userdb/register"
+
+#name stuff
+nickname		:		heise nickname [login name]
+givenname		: 	vorname
+name				:		nachname
+pseudonym		:		shown nickname
+showrealname:		checkbox, 1 = realname ueber posts anzeigen    
+
+#email stuff
+email				:   email adresse
+showemail		:		checkbox, 1 = email ueber posts anzeigen
+subscribe_newsletter	:		checkbox, 1 = newsletter abonnieren
+
+#hidden values
+rm					:		"accept_terms"
+regmode			:		"standard"
+dirid				:		"1"
+skin				:		"default"
+special			:		""
+accept			:		"Ich stimme zu"
+
+
+#python parameter dictionary
+
+param_dict = {	'nickname' : "%s" %(nickname), \
+								'givenname' : "%s" %(givenname),	\
+								'name' : "%s" %(name), \
+								'pseudonym' : "%s" %(pseudonym), \
+#								'showrealname' : "1", \
+								'email' : "%s" %(email), \
+#								'showemail' : "1", \
+#								'subscribe_newsletter' : "1", \
+								'rm' : "accept_terms", \
+								'regmode' : "standard", \
+								'dirid' : "1", \
+								'skin' : "default", \
+								'special' : "", \
+								'accept' : "Ich stimme zu" \
+								}
+
+###### PHASE 2
+read token string from returned html page
+
+###### PHASE 3
+???
+
+###### PHASE 4
+PROFIT
+
+POST /userdb/register
+
+
+passwd1			:				the password
+passwd2			:				again pwd
+
+
+rm					:				"confirm"
+regmode			:				"standard"
+
+nickname		:				nick from step 1
+dirid				:				"1"
+skin				:				"default"
+
+pseudonym		:				pseudonym from step 1
+name				:				name from step 1
+givenname		:				givenname from step 1
+email				:				email from step 1
+
+showemail		:				"1"
+showrealname:				"1"
+
+tokenstring	:				read tokenstring from PHASE 2
+special			:				""
+submit			:				"fertig"
+
+
+#python dict
+param_dict_2 = {	'passwd1' : "%s" %(password), \
+									'passwd2' : "%s" %(password), \
+									'rm' : "confirm", \
+									'regmode' : "standard", \
+									'nickname' : "%s" %(nickname), \
+									'dirid' : "1", \
+									'skin' : "default", \
+									'pseudonym' : "%s" %(pseudonym), \
+									'name' : "%s" %(name), \
+									'givenname' : "%s" %(givenname), \
+									'email' : "%s" %(email), \
+#									'showemail' : "1", \
+#									'showrealname' : "1", \
+									'tokenstring': "%s" %(token_str), \
+									'special' : "", \
+									'submit' : "fertig" \
+									}
