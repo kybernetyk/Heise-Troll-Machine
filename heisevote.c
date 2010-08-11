@@ -506,7 +506,6 @@ int close_db_file (hp_credential_db_handle *db_handle)
 
 void free_credential (hp_credentials *credential)
 {
-	//clean up :[
 	free(credential->account), credential->account = 0;
 	free(credential->password), credential->password = 0;;
 }
@@ -557,7 +556,6 @@ int main (int argc, const char *argv[])
 				
 			case 'v':
 				vote_val = atoi(optarg);
-				//printf("v: %s = %i\n", optarg, vote_val);
 				break;
 				
 			case '?':
@@ -616,12 +614,10 @@ int main (int argc, const char *argv[])
 
 		if (!login(curl_handle, &credential))
 		{
-			//	return 1;
 			
 			fprintf(stderr,"login error. skipping to next account ...\n\n");
 			continue;
 		}
-		//printf("\n");
 		//sleep(7);
 		if (!vote_post(curl_handle, &vote))
 		{
