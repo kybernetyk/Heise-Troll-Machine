@@ -357,7 +357,7 @@ int vote_post (CURL *curl_handle, hp_vote *vote)
 	
 	char *p_vote_prefix_start = tmp_vote_url;
 	
-	char *p_vote_prefix_end = strcasestr(tmp_vote_url, "/S");
+	char *p_vote_prefix_end = strstr(tmp_vote_url, "/S-");
 	if (!p_vote_prefix_end)
 	{
 		fprintf(stderr, "\tcould not terminate prefix!\n");
